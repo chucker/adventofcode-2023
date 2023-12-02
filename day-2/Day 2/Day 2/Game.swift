@@ -23,7 +23,19 @@ struct Game {
                 return false
             }
         }
-        
+
         return true
+    }
+
+    static func sumPossible(games: [Game], bag: Bag) -> Int {
+        var result = 0
+
+        for game in games {
+            if game.possibleWith(bag: bag) {
+                result += game.id
+            }
+        }
+
+        return result
     }
 }

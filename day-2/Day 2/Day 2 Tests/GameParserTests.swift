@@ -40,5 +40,7 @@ final class GameParserTests: XCTestCase {
         XCTAssertFalse(games[3]!.possibleWith(bag: bag))
         XCTAssertFalse(games[4]!.possibleWith(bag: bag))
         XCTAssert(games[5]!.possibleWith(bag: bag))
+        
+        XCTAssertEqual(Game.sumPossible(games: Array(games.values), bag: bag), 8)
     }
 }

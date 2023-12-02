@@ -24,4 +24,21 @@ final class GameParserTests: XCTestCase {
             XCTAssertEqual(result.rounds.count, testCase.2)
         }
     }
+    
+    func testBagPossible() {
+        var games=[Int:Game]()
+        
+        for testCase in testCases {
+            let game = GameParser.parse(line: testCase.0)
+            games[game.id] = game
+        }
+        
+        let bag = Bag(red: 12, green: 13, blue: 14)
+        
+        XCTAssert(games[1]!.possibleWith(bag: bag))
+        XCTAssert(games[2]!.possibleWith(bag: bag))
+        XCTAssertFalse(games[3]!.possibleWith(bag: bag))
+        XCTAssertFalse(games[4]!.possibleWith(bag: bag))
+        XCTAssert(games[5]!.possibleWith(bag: bag))
+    }
 }

@@ -19,6 +19,7 @@
 		5F8335012B1B5D860016EC53 /* GameParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8334F92B1B51810016EC53 /* GameParser.swift */; };
 		5F8335022B1B5DDC0016EC53 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8334F52B1B50F20016EC53 /* Game.swift */; };
 		5F8335042B1B5F310016EC53 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8335032B1B5F310016EC53 /* Bag.swift */; };
+		5F8335052B1B5FAC0016EC53 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8335032B1B5F310016EC53 /* Bag.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -208,6 +209,7 @@
 			files = (
 				5F8334F12B1B50DC0016EC53 /* GameParserTests.swift in Sources */,
 				5F8335022B1B5DDC0016EC53 /* Game.swift in Sources */,
+				5F8335052B1B5FAC0016EC53 /* Bag.swift in Sources */,
 				5F8335002B1B55910016EC53 /* RoundParser.swift in Sources */,
 				5F8335012B1B5D860016EC53 /* GameParser.swift in Sources */,
 				5F8334FF2B1B55070016EC53 /* Round.swift in Sources */,

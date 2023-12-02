@@ -12,7 +12,7 @@ let path = Bundle.main.path(forResource: "input", ofType: "txt")!
 let data = try! String(contentsOfFile: path, encoding: .utf8)
 let lines = data.components(separatedBy: .newlines)
 
-var games=[Game]()
+var games = [Game]()
 
 for line in lines {
     if line.isEmpty {
@@ -25,3 +25,11 @@ for line in lines {
 let bag = Bag(red: 12, green: 13, blue: 14)
 
 print(Game.sumPossible(games: games, bag: bag))
+
+var sumPower = 0
+
+for game in games {
+    sumPower += game.smallestPossibleBag().power()
+}
+
+print(sumPower)

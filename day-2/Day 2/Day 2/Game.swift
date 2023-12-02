@@ -27,6 +27,14 @@ struct Game {
         return true
     }
 
+    func smallestPossibleBag() -> Bag {
+        let red = rounds.map { r in r.red }.max() ?? 0
+        let green = rounds.map { r in r.green }.max() ?? 0
+        let blue = rounds.map { r in r.blue }.max() ?? 0
+
+        return Bag(red: red, green: green, blue: blue)
+    }
+
     static func sumPossible(games: [Game], bag: Bag) -> Int {
         var result = 0
 

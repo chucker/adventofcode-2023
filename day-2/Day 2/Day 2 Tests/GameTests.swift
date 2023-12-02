@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class GameParserTests: XCTestCase {
+final class GameTests: XCTestCase {
     let testCases = [("Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green", 1, 3),
                      ("Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue", 2, 3),
                      ("Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red", 3, 3),
@@ -42,5 +42,27 @@ final class GameParserTests: XCTestCase {
         XCTAssert(games[5]!.possibleWith(bag: bag))
         
         XCTAssertEqual(Game.sumPossible(games: Array(games.values), bag: bag), 8)
+    }
+    
+    let expectedBags = [(Bag(red: 4, green: 2, blue: 6), 48),
+                        (Bag(red: 1, green: 3, blue: 4), 12),
+                        (Bag(red: 20, green: 13, blue: 6), 1_560),
+                        (Bag(red: 14, green: 3, blue: 15), 630),
+                        (Bag(red: 6, green: 3, blue: 2), 36)]
+    
+    func testSmallestPossibleBag() {
+        for i in 0..<expectedBags.count {
+            let testCase = testCases[i]
+            let game = GameParser.parse(line: testCase.0)
+            
+            let actualBag = game.smallestPossibleBag()
+            let expectedBag = expectedBags[i].0
+            
+            XCTAssertEqual(actualBag, expectedBag)
+            
+            let expectedPower = expectedBags[i].1
+
+            XCTAssertEqual(actualBag.power(), expectedPower)
+        }
     }
 }

@@ -7,8 +7,12 @@
 
 import Foundation
 
-struct Bag {
+struct Bag : Equatable {
     let red: Int
     let green: Int
     let blue: Int
+    
+    func power() -> Int {
+        red * green * blue
+    }
 }

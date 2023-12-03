@@ -31,29 +31,29 @@ final class LineTests: XCTestCase {
                    [664, 598]]
     
     let symbols = [[],
-                   ["*"],
+                   [(3, "*")],
                    [],
-                   ["#"],
-                   ["*"],
-                   ["+"],
+                   [(6, "#")],
+                   [(3, "*")],
+                   [(5, "+")],
                    [],
                    [],
-                   ["$", "*"],
+                   [(3, "$"), (5, "*")],
                    []]
     
+    let numbersWithAdjacentSymbols = [[467],
+                                      [],
+                                      [35, 633],
+                                      [],
+                                      [617],
+                                      [],
+                                      [592],
+                                      [755],
+                                      [],
+                                      [664, 598]]
+    
     func testPreviousNext() throws {
-        var lines = [Line]()
-        
-        for s in linesInput {
-            let line = Line(text: s)
-            
-            if let last = lines.last {
-                line.previous = last
-                last.next = line
-            }
-            
-            lines.append(line)
-        }
+        let lines = Line.buildLinesWithPreviousAndNext(linesInput: linesInput)
         
         XCTAssertNil(lines.first!.previous)
         XCTAssertNil(lines.last!.next)
@@ -74,9 +74,42 @@ final class LineTests: XCTestCase {
     func testGetSymbols() throws {
         for i in 0..<linesInput.count {
             let line = Line(text: linesInput[i])
-            let expectedSymbols = symbols[i]
             
-            XCTAssertEqual(line.getSymbols(), expectedSymbols)
+            let expectedSymbols = symbols[i]
+            let actualSymbols = line.getSymbols()
+            
+            XCTAssertEqual(actualSymbols.count, expectedSymbols.count)
+            
+            for j in 0..<actualSymbols.count {
+                XCTAssertEqual(actualSymbols[j].0, expectedSymbols[j].0)
+                XCTAssertEqual(actualSymbols[j].1, expectedSymbols[j].1)
+            }
         }
+    }
+    
+    func testGetNumbersWithAdjacentSymbols() throws {
+        let lines = Line.buildLinesWithPreviousAndNext(linesInput: linesInput)
+        
+        for i in 0..<linesInput.count {
+            let line = lines[i]
+            let expectedNumbers = numbersWithAdjacentSymbols[i]
+            
+            XCTAssertEqual(line.getNumbersWithAdjacentSymbols(), expectedNumbers)
+        }
+    }
+    
+    func testSum() throws {
+        var sum = 0
+        
+        let lines = Line.buildLinesWithPreviousAndNext(linesInput: linesInput)
+        
+        for i in 0..<linesInput.count {
+            let line = lines[i]
+            for number in line.getNumbersWithAdjacentSymbols() {
+                sum += number
+            }
+        }
+        
+        XCTAssertEqual(sum, 4361)
     }
 }

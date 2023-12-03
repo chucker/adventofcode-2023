@@ -11,17 +11,19 @@
 		5F83351E2B1CA33E0016EC53 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F83351D2B1CA33E0016EC53 /* Line.swift */; };
 		5F8335262B1CA5980016EC53 /* LineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8335252B1CA5980016EC53 /* LineTests.swift */; };
 		5F83352A2B1CA6030016EC53 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F83351D2B1CA33E0016EC53 /* Line.swift */; };
+		5F83352D2B1CAEC80016EC53 /* input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F83352B2B1CAE9F0016EC53 /* input.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5F8335112B1CA3190016EC53 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = .;
+			dstSubfolderSpec = 16;
 			files = (
+				5F83352D2B1CAEC80016EC53 /* input.txt in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -31,6 +33,7 @@
 		5F83351D2B1CA33E0016EC53 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		5F8335232B1CA5970016EC53 /* Day 3 Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Day 3 Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F8335252B1CA5980016EC53 /* LineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTests.swift; sourceTree = "<group>"; };
+		5F83352B2B1CAE9F0016EC53 /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,7 @@
 			children = (
 				5F8335162B1CA3190016EC53 /* main.swift */,
 				5F83351D2B1CA33E0016EC53 /* Line.swift */,
+				5F83352B2B1CAE9F0016EC53 /* input.txt */,
 			);
 			path = "Day 3";
 			sourceTree = "<group>";

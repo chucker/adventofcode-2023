@@ -12,7 +12,7 @@ struct Card {
     let yourNumbers: [Int]
 
     init(line: String) {
-        let regex = /Card \d+:(?<Winning>[\d ]+)|(?<Yours>[\d ]+)/
+        let regex = /Card\s+\d+:(?<Winning>[\d ]+)|(?<Yours>[\d ]+)/
         let numbers = /\d+/
 
         let matches = line.matches(of: regex)

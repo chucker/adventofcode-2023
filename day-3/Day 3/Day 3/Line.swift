@@ -75,7 +75,7 @@ class Line {
             let s = String(m.output)
 
             let startIndex = m.startIndex.utf16Offset(in: text)
-            let endIndex = m.endIndex.utf16Offset(in: text)
+            let endIndex = m.endIndex.utf16Offset(in: text) - 1
 
             var hasAdjacentSymbol = false
 

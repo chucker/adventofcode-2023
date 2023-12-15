@@ -34,15 +34,15 @@ class Line {
         return lines
     }
 
-    func getNumbers() -> [Int] {
+    func getNumbers() -> [(Int, Int)] {
         let regex = /\d+/
 
-        var result = [Int]()
+        var result = [(Int, Int)]()
 
         for m in text.matches(of: regex) {
             let s = String(m.output)
             if let i = Int(s) {
-                result.append(i)
+                result.append((m.startIndex.utf16Offset(in: text), i))
             }
         }
 

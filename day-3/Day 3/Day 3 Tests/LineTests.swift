@@ -67,7 +67,7 @@ final class LineTests: XCTestCase {
             let line = Line(text: linesInput[i])
             let expectedNumbers = numbers[i]
             
-            XCTAssertEqual(line.getNumbers(), expectedNumbers)
+            XCTAssertEqual(line.getNumbers().map { $1 }, expectedNumbers)
         }
     }
     

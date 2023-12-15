@@ -18,11 +18,17 @@ final class CardTests: XCTestCase {
     let expectedPoints: [Int] = [8, 2, 2, 1, 0, 0]
 
     func testParseLine() throws {
+        var id = 1
+
         for line in input {
             let card = Card(line: line)
 
             XCTAssertEqual(card.winningNumbers.count, 5)
             XCTAssertEqual(card.yourNumbers.count, 8)
+
+            XCTAssertEqual(card.id, id)
+
+            id += 1
         }
     }
 
@@ -33,5 +39,12 @@ final class CardTests: XCTestCase {
 
             XCTAssertEqual(card.getPoints(), points)
         }
+    }
+
+    func testWonScratchcards() throws {
+        let cardsById = Card.getCardsById(input: input)
+        let winningCards = Card.processCards(cardsById: cardsById)
+
+        XCTAssertEqual(winningCards.count, 30)
     }
 }

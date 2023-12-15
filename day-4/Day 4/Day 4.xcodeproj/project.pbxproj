@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5F1610B42B2C7BAA006845BE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1610B32B2C7BAA006845BE /* main.swift */; };
-		5F1610C12B2C7BD8006845BE /* Day_4_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1610C02B2C7BD8006845BE /* Day_4_Tests.swift */; };
 		5F1610C62B2C7BE7006845BE /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1610C52B2C7BE7006845BE /* Card.swift */; };
 		5F1610C82B2C7E40006845BE /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1610C72B2C7E40006845BE /* CardTests.swift */; };
 		5F1610C92B2C7EBC006845BE /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1610C52B2C7BE7006845BE /* Card.swift */; };
@@ -32,7 +31,6 @@
 		5F1610B02B2C7BAA006845BE /* Day 4 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 4"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F1610B32B2C7BAA006845BE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		5F1610BE2B2C7BD8006845BE /* Day 4 Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Day 4 Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F1610C02B2C7BD8006845BE /* Day_4_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day_4_Tests.swift; sourceTree = "<group>"; };
 		5F1610C52B2C7BE7006845BE /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		5F1610C72B2C7E40006845BE /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
 		5F1610CA2B2C8517006845BE /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 		5F1610BF2B2C7BD8006845BE /* Day 4 Tests */ = {
 			isa = PBXGroup;
 			children = (
-				5F1610C02B2C7BD8006845BE /* Day_4_Tests.swift */,
 				5F1610C72B2C7E40006845BE /* CardTests.swift */,
 			);
 			path = "Day 4 Tests";
@@ -191,7 +188,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F1610C12B2C7BD8006845BE /* Day_4_Tests.swift in Sources */,
 				5F1610C92B2C7EBC006845BE /* Card.swift in Sources */,
 				5F1610C82B2C7E40006845BE /* CardTests.swift in Sources */,
 			);

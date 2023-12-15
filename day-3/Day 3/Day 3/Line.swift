@@ -122,9 +122,7 @@ class Line {
             }
 
             if adjacentNumbers.count == 2 {
-                // I'm not sure why `reduce(0, *)` doesn't work
-                
-                gearRatios.append(adjacentNumbers[0] * adjacentNumbers[1])
+                gearRatios.append(adjacentNumbers.reduce(1, *))
             }
         }
 

@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F1610A12B2C68D2006845BE /* input-rbo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F1610A02B2C68D2006845BE /* input-rbo.txt */; };
+		5F1610A22B2C68EB006845BE /* input-rbo.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F1610A02B2C68D2006845BE /* input-rbo.txt */; };
+		5F1610A42B2C6B7B006845BE /* CustomLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1610A32B2C6B7B006845BE /* CustomLineTests.swift */; };
 		5F8335172B1CA3190016EC53 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8335162B1CA3190016EC53 /* main.swift */; };
 		5F83351E2B1CA33E0016EC53 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F83351D2B1CA33E0016EC53 /* Line.swift */; };
 		5F8335262B1CA5980016EC53 /* LineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8335252B1CA5980016EC53 /* LineTests.swift */; };
 		5F83352A2B1CA6030016EC53 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F83351D2B1CA33E0016EC53 /* Line.swift */; };
 		5F83352D2B1CAEC80016EC53 /* input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F83352B2B1CAE9F0016EC53 /* input.txt */; };
+		5FF87EF72B227D3E00BE58F5 /* FinalInputTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF87EF62B227D3E00BE58F5 /* FinalInputTests.swift */; };
+		5FF87EFA2B227FDB00BE58F5 /* input.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F83352B2B1CAE9F0016EC53 /* input.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -21,6 +26,7 @@
 			dstPath = .;
 			dstSubfolderSpec = 16;
 			files = (
+				5F1610A22B2C68EB006845BE /* input-rbo.txt in CopyFiles */,
 				5F83352D2B1CAEC80016EC53 /* input.txt in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -28,12 +34,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F1610A02B2C68D2006845BE /* input-rbo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "input-rbo.txt"; sourceTree = "<group>"; };
+		5F1610A32B2C6B7B006845BE /* CustomLineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLineTests.swift; sourceTree = "<group>"; };
 		5F8335132B1CA3190016EC53 /* Day 3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 3"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F8335162B1CA3190016EC53 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		5F83351D2B1CA33E0016EC53 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		5F8335232B1CA5970016EC53 /* Day 3 Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Day 3 Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F8335252B1CA5980016EC53 /* LineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTests.swift; sourceTree = "<group>"; };
 		5F83352B2B1CAE9F0016EC53 /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
+		5FF87EF62B227D3E00BE58F5 /* FinalInputTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalInputTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +84,7 @@
 		5F8335152B1CA3190016EC53 /* Day 3 */ = {
 			isa = PBXGroup;
 			children = (
+				5F1610A02B2C68D2006845BE /* input-rbo.txt */,
 				5F8335162B1CA3190016EC53 /* main.swift */,
 				5F83351D2B1CA33E0016EC53 /* Line.swift */,
 				5F83352B2B1CAE9F0016EC53 /* input.txt */,
@@ -86,6 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				5F8335252B1CA5980016EC53 /* LineTests.swift */,
+				5F1610A32B2C6B7B006845BE /* CustomLineTests.swift */,
+				5FF87EF62B227D3E00BE58F5 /* FinalInputTests.swift */,
 			);
 			path = "Day 3 Tests";
 			sourceTree = "<group>";
@@ -169,6 +181,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F1610A12B2C68D2006845BE /* input-rbo.txt in Resources */,
+				5FF87EFA2B227FDB00BE58F5 /* input.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +204,8 @@
 			files = (
 				5F8335262B1CA5980016EC53 /* LineTests.swift in Sources */,
 				5F83352A2B1CA6030016EC53 /* Line.swift in Sources */,
+				5F1610A42B2C6B7B006845BE /* CustomLineTests.swift in Sources */,
+				5FF87EF72B227D3E00BE58F5 /* FinalInputTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

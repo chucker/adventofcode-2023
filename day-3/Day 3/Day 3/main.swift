@@ -17,7 +17,9 @@ var sum: Int = 0
 let lines = Line.buildLinesWithPreviousAndNext(linesInput: linesInput)
 
 for line in lines {
-    for number in line.getNumbersWithAdjacentSymbols() {
+    let numbers = line.getNumbersWithAdjacentSymbols()
+    
+    for number in numbers {
         sum += number
     }
 }

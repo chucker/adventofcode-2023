@@ -95,4 +95,39 @@ class Line {
 
         return result
     }
+
+    func getGearRatios() -> [Int] {
+        let symbolLocations = getSymbols().filter { $0.1 == "*" }.map { $0.0 }
+
+        let previousNumbers = previous?.getNumbers()
+        let currentNumbers = getNumbers()
+        let nextNumbers = next?.getNumbers()
+
+        var gearRatios = [Int]()
+
+        for sl in symbolLocations {
+            var adjacentNumbers = [Int]()
+
+            for numbers in [previousNumbers, currentNumbers, nextNumbers] {
+                guard let numbers else { continue }
+
+                for number in numbers {
+                    let startIndex = number.0
+                    let endIndex = number.0 + String(number.1).count - 1
+
+                    if sl >= startIndex - 1, sl <= endIndex + 1 {
+                        adjacentNumbers.append(number.1)
+                    }
+                }
+            }
+
+            if adjacentNumbers.count == 2 {
+                // I'm not sure why `reduce(0, *)` doesn't work
+                
+                gearRatios.append(adjacentNumbers[0] * adjacentNumbers[1])
+            }
+        }
+
+        return gearRatios
+    }
 }

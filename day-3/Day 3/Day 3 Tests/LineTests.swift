@@ -112,4 +112,18 @@ final class LineTests: XCTestCase {
         
         XCTAssertEqual(sum, 4361)
     }
+    
+    func testGetGearRatios() throws {
+        let lines = Line.buildLinesWithPreviousAndNext(linesInput: linesInput)
+        
+        var gearRatios = [Int]()
+        
+        for line in lines {
+            for gearRatio in line.getGearRatios() {
+                gearRatios.append(gearRatio)
+            }
+        }
+        
+        XCTAssertEqual(gearRatios.reduce(0, +), 467835)
+    }
 }

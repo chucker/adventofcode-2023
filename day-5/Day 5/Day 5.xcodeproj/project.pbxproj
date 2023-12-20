@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5F91F8602B336B5D0009256B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F91F85F2B336B5D0009256B /* main.swift */; };
 		5F91F8672B336B760009256B /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F91F8662B336B760009256B /* Map.swift */; };
-		5F91F8752B336B9D0009256B /* MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F91F8742B336B9D0009256B /* MapTests.swift */; };
 		5F91F8772B336D040009256B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F91F8762B336D040009256B /* Data.swift */; };
 		5F91F8792B336D0E0009256B /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F91F8782B336D0E0009256B /* DataTests.swift */; };
 		5F91F87A2B336EB70009256B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F91F8762B336D040009256B /* Data.swift */; };
@@ -17,17 +16,19 @@
 		5F91F87D2B3374C00009256B /* Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F91F87C2B3374C00009256B /* Range.swift */; };
 		5F91F87E2B3374C20009256B /* Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F91F87C2B3374C00009256B /* Range.swift */; };
 		5F91F8802B33827A0009256B /* RangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F91F87F2B33827A0009256B /* RangeTests.swift */; };
+		5F91F8822B339E930009256B /* input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F91F8812B339E810009256B /* input.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5F91F85A2B336B5D0009256B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = .;
+			dstSubfolderSpec = 16;
 			files = (
+				5F91F8822B339E930009256B /* input.txt in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -36,11 +37,11 @@
 		5F91F85F2B336B5D0009256B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		5F91F8662B336B760009256B /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		5F91F86C2B336B850009256B /* Day 5 Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Day 5 Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F91F8742B336B9D0009256B /* MapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTests.swift; sourceTree = "<group>"; };
 		5F91F8762B336D040009256B /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		5F91F8782B336D0E0009256B /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
 		5F91F87C2B3374C00009256B /* Range.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Range.swift; sourceTree = "<group>"; };
-		5F91F87F2B33827A0009256B /* RangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RangeTests.swift; path = "Day 5 Tests/RangeTests.swift"; sourceTree = "<group>"; };
+		5F91F87F2B33827A0009256B /* RangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeTests.swift; sourceTree = "<group>"; };
+		5F91F8812B339E810009256B /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +65,6 @@
 		5F91F8532B336B5D0009256B = {
 			isa = PBXGroup;
 			children = (
-				5F91F87F2B33827A0009256B /* RangeTests.swift */,
 				5F91F85E2B336B5D0009256B /* Day 5 */,
 				5F91F86D2B336B850009256B /* Day 5 Tests */,
 				5F91F85D2B336B5D0009256B /* Products */,
@@ -87,6 +87,7 @@
 				5F91F85F2B336B5D0009256B /* main.swift */,
 				5F91F8662B336B760009256B /* Map.swift */,
 				5F91F8762B336D040009256B /* Data.swift */,
+				5F91F8812B339E810009256B /* input.txt */,
 			);
 			path = "Day 5";
 			sourceTree = "<group>";
@@ -94,7 +95,7 @@
 		5F91F86D2B336B850009256B /* Day 5 Tests */ = {
 			isa = PBXGroup;
 			children = (
-				5F91F8742B336B9D0009256B /* MapTests.swift */,
+				5F91F87F2B33827A0009256B /* RangeTests.swift */,
 				5F91F8782B336D0E0009256B /* DataTests.swift */,
 			);
 			path = "Day 5 Tests";
@@ -202,7 +203,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F91F8792B336D0E0009256B /* DataTests.swift in Sources */,
-				5F91F8752B336B9D0009256B /* MapTests.swift in Sources */,
 				5F91F87B2B3373D30009256B /* Map.swift in Sources */,
 				5F91F8802B33827A0009256B /* RangeTests.swift in Sources */,
 				5F91F87A2B336EB70009256B /* Data.swift in Sources */,

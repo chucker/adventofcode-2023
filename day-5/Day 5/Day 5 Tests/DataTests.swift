@@ -73,4 +73,29 @@ class DataTests: XCTestCase {
 
         XCTAssertEqual(expectedResult, map.pickRange(input: input))
     }
+
+    func testAllMaps() throws {
+        let data = Data(input: DataTests.input)
+
+        let expectedLocations = [82, 43, 86, 35]
+
+        for i in 0 ..< expectedLocations.count {
+            var value = data.seeds[i]
+
+            for map in data.maps {
+                let oldValue = value
+
+                let range = map.pickRange(input: value)
+                value = Range.map(input: oldValue, range: range)
+
+                print("\(map.name): \(oldValue) -> \(value)")
+            }
+
+            XCTAssertEqual(value, expectedLocations[i])
+        }
+
+        let lowestLocation = expectedLocations.min()
+
+        print(lowestLocation ?? 0)
+    }
 }

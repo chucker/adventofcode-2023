@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Card {
+class Card {
     let winningNumbers: [Int]
     let yourNumbers: [Int]
 
@@ -28,12 +28,10 @@ struct Card {
         self.yourNumbers = yours.map { Int($0.output)! }
     }
 
-    func getMatches() -> Set<Int> {
-        Set(winningNumbers).intersection(yourNumbers)
-    }
+    lazy var matches: Set<Int> = Set(winningNumbers).intersection(yourNumbers)
 
     func getPoints() -> Int {
-        let matches = getMatches()
+        let matches = self.matches
 
         let points = pow(2, matches.count - 1)
 
@@ -65,20 +63,37 @@ struct Card {
             cardsToProcess.append(card)
         }
 
+        var countDiff = 0
+
         while cardsToProcess.count > 0 {
+            let winningCount = winningCards.count
+
+            if winningCount % 100_000 == 0 {
+                let processCount = cardsToProcess.count
+                countDiff = processCount - countDiff
+
+                let percentage: Float = winningCount > 0 ? Float(processCount) / Float(winningCount) : 1
+
+                print("currently at \(winningCount); \(processCount) more to process (\(percentage * 100)%; \(countDiff) more than last time)")
+
+//                let processCount = cardsToProcess.count
+//
+//                print("currently at \(winningCount); \(processCount) more to process")
+            }
+
             let card = cardsToProcess.removeFirst()
 
-            let matches = card.getMatches()
+            let matches = card.matches
 
             winningCards.append(card)
 
             if matches.count == 0 {
-                print("Card \(card.id): no matches")
-                
+//                print("Card \(card.id): no matches; currently at \(winningCards.count)")
+
                 continue
             }
 
-            print("Card \(card.id): adding itself, and processing \(card.id + 1) through \(card.id + matches.count)")
+//            print("Card \(card.id): adding itself, and processing \(card.id + 1) through \(card.id + matches.count)")
 
             for i in card.id ..< (card.id + matches.count) {
                 cardsToProcess.append(cardsById[i + 1]!)

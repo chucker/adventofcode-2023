@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct Range {
+struct Range: Equatable {
     let destinationStart: Int
-    lazy var destinationEnd: Int = destinationStart + length - 1
+    var destinationEnd: Int { destinationStart + length - 1 }
 
     let sourceStart: Int
-    lazy var sourceEnd: Int = sourceStart + length - 1
+    var sourceEnd: Int { sourceStart + length - 1 }
 
     let length: Int
 }

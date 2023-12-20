@@ -44,13 +44,33 @@ class DataTests: XCTestCase {
     56 93 4
     """#
 
-    func test() throws {
+    func testParsing() throws {
         let result = Data(input: input)
 
         XCTAssertEqual(result.seeds.count, 4)
-        
+
         XCTAssertEqual(result.maps.count, 7)
         XCTAssertEqual(result.maps[0].name, "seed-to-soil")
         XCTAssertGreaterThan(result.maps[0].ranges.count, 0)
+    }
+
+    func testPickRange() throws {
+        let data = Data(input: self.input)
+        let map = data.maps[0]
+
+        var input = 79
+        var expectedResult: Range? = Range(destinationStart: 52, sourceStart: 50, length: 48)
+
+        XCTAssertEqual(expectedResult, map.pickRange(input: input))
+
+        input = 14
+        expectedResult = nil
+
+        XCTAssertEqual(expectedResult, map.pickRange(input: input))
+
+        input = 99
+        expectedResult = Range(destinationStart: 50, sourceStart: 98, length: 2)
+
+        XCTAssertEqual(expectedResult, map.pickRange(input: input))
     }
 }

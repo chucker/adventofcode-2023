@@ -15,4 +15,14 @@ class Map {
     }
 
     var ranges = [Range]()
+    
+    func pickRange(input: Int) -> Range? {
+        for range in ranges {
+            if input >= range.sourceStart && input <= range.sourceEnd {
+                return range
+            }
+        }
+        
+        return nil
+    }
 }

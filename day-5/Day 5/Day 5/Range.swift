@@ -15,4 +15,12 @@ struct Range: Equatable {
     var sourceEnd: Int { sourceStart + length - 1 }
 
     let length: Int
+
+    static func map(input: Int, range: Range?) -> Int {
+        if let range {
+            return input + range.destinationStart - range.sourceStart
+        }
+
+        return input
+    }
 }

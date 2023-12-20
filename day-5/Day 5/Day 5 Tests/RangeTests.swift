@@ -8,13 +8,20 @@
 import XCTest
 
 class RangeTests: XCTestCase {
-    let ranges = [Range(destinationStart: 50, sourceStart: 98, length: 2),
-                  Range(destinationStart: 52, sourceStart: 50, length: 48)]
-    
-    let seeds = [79, 14, 55, 13]
-    
     func testMap() throws {
-        let range = ranges[1]
-        let seed = seeds[0]
+        let data = Data(input: DataTests.input)
+
+        let map = data.maps[0]
+
+        let expectedResults = [81, 14, 57, 13]
+
+        for i in 0 ..< expectedResults.count {
+            let seed = data.seeds[i]
+            let expectedResult = expectedResults[i]
+
+            let range = map.pickRange(input: seed)
+
+            XCTAssertEqual(Range.map(input: seed, range: range), expectedResult)
+        }
     }
 }

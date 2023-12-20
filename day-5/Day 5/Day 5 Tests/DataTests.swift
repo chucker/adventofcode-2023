@@ -8,7 +8,7 @@
 import XCTest
 
 class DataTests: XCTestCase {
-    let input = #"""
+    static let input = #"""
     seeds: 79 14 55 13
 
     seed-to-soil map:
@@ -45,7 +45,7 @@ class DataTests: XCTestCase {
     """#
 
     func testParsing() throws {
-        let result = Data(input: input)
+        let result = Data(input: DataTests.input)
 
         XCTAssertEqual(result.seeds.count, 4)
 
@@ -55,7 +55,7 @@ class DataTests: XCTestCase {
     }
 
     func testPickRange() throws {
-        let data = Data(input: self.input)
+        let data = Data(input: DataTests.input)
         let map = data.maps[0]
 
         var input = 79

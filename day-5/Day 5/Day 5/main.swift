@@ -15,16 +15,22 @@ let data = Data(input: input)
 
 var values = data.seeds
 
+print("count: \(values.count)")
+
 for i in 0 ..< values.count {
     for map in data.maps {
+        if i % 100_000 == 0 {
+            print(i)
+        }
+
         let oldValue = values[i]
 
         let range = map.pickRange(input: oldValue)
         let value = Range.map(input: oldValue, range: range)
-        
+
         values[i] = value
 
-        print("\(map.name): \(oldValue) -> \(value)")
+//        print("\(map.name): \(oldValue) -> \(value)")
     }
 }
 

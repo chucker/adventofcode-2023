@@ -47,7 +47,7 @@ class DataTests: XCTestCase {
     func testParsing() throws {
         let result = Data(input: DataTests.input)
 
-        XCTAssertEqual(result.seeds.count, 4)
+        XCTAssertEqual(result.seeds.count, 27)
 
         XCTAssertEqual(result.maps.count, 7)
         XCTAssertEqual(result.maps[0].name, "seed-to-soil")
@@ -77,7 +77,12 @@ class DataTests: XCTestCase {
     func testAllMaps() throws {
         let data = Data(input: DataTests.input)
 
-        let expectedLocations = [82, 43, 86, 35]
+        let expectedLocations = [82, 83, 84, 46, 47,
+                                 48, 49, 50, 51, 52,
+                                 53, 54, 55, 60, 86,
+                                 87, 88, 89, 94, 95,
+                                 96, 56, 57, 58, 59,
+                                 97, 98]
 
         for i in 0 ..< expectedLocations.count {
             var value = data.seeds[i]
@@ -90,6 +95,8 @@ class DataTests: XCTestCase {
 
                 print("\(map.name): \(oldValue) -> \(value)")
             }
+
+            print("---")
 
             XCTAssertEqual(value, expectedLocations[i])
         }

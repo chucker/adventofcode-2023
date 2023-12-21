@@ -8,8 +8,14 @@
 import XCTest
 
 final class AttemptTests: XCTestCase {
-    let race1 = Race(duration: Measurement(value: 7.0, unit: UnitDuration.milliseconds),
-                    recordDistance: Measurement(value: 9.0, unit: UnitLength.millimeters))
+    let races = [Race(duration: Measurement(value: 7.0, unit: UnitDuration.milliseconds),
+                      recordDistance: Measurement(value: 9.0, unit: UnitLength.millimeters)),
+
+                 Race(duration: Measurement(value: 15.0, unit: UnitDuration.milliseconds),
+                      recordDistance: Measurement(value: 40.0, unit: UnitLength.millimeters)),
+
+                 Race(duration: Measurement(value: 30.0, unit: UnitDuration.milliseconds),
+                      recordDistance: Measurement(value: 200.0, unit: UnitLength.millimeters))]
 
     let input = [(holdDuration: 0.0, expectedDistance: 0.0, expectedSuccess: false),
                  (holdDuration: 1.0, expectedDistance: 6.0, expectedSuccess: false),
@@ -23,7 +29,7 @@ final class AttemptTests: XCTestCase {
     func testGetTravelledDistance() throws {
         for tuple in input {
             let attempt = Attempt(holdDuration: Measurement(value: tuple.holdDuration, unit: UnitDuration.milliseconds),
-                                  race: race1)
+                                  race: races[0])
 
             XCTAssertEqual(Measurement(value: tuple.expectedDistance, unit: UnitLength.millimeters),
                            attempt.getTravelledDistance())
@@ -33,9 +39,28 @@ final class AttemptTests: XCTestCase {
     func testIsSuccessful() throws {
         for tuple in input {
             let attempt = Attempt(holdDuration: Measurement(value: tuple.holdDuration, unit: UnitDuration.milliseconds),
-                                  race: race1)
+                                  race: races[0])
 
             XCTAssertEqual(tuple.expectedSuccess, attempt.isSuccessful())
         }
+    }
+
+    func testCountSuccessful() throws {
+        let expectedCounts = [4, 8, 9]
+
+        for i in 0 ..< expectedCounts.count {
+            let expectedCount = expectedCounts[i]
+            let race = races[i]
+
+            XCTAssertEqual(expectedCount, race.getAllSuccessfulPossibilities().count)
+        }
+    }
+    
+    func testScore() throws {
+        let expectedScore = 288
+
+        let actualScore = Race.getScore(races: races)
+
+        XCTAssertEqual(expectedScore, actualScore)
     }
 }

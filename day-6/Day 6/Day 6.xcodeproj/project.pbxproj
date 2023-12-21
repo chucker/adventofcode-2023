@@ -13,17 +13,22 @@
 		5F4E29A42B34CF6C00C3889B /* Attempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E29A32B34CF6C00C3889B /* Attempt.swift */; };
 		5F4E29A52B34CF6C00C3889B /* Attempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E29A32B34CF6C00C3889B /* Attempt.swift */; };
 		5F4E29A82B34D18400C3889B /* AttemptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E29A62B34D18400C3889B /* AttemptTests.swift */; };
+		5F4E29AA2B34E3A000C3889B /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E29A92B34E3A000C3889B /* Parser.swift */; };
+		5F4E29AB2B34E3A000C3889B /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E29A92B34E3A000C3889B /* Parser.swift */; };
+		5F4E29AD2B34E3D400C3889B /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E29AC2B34E3D400C3889B /* ParserTests.swift */; };
+		5F4E29AF2B34E82C00C3889B /* input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F4E29AE2B34E82000C3889B /* input.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5F4E29892B34CD7F00C3889B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = .;
+			dstSubfolderSpec = 16;
 			files = (
+				5F4E29AF2B34E82C00C3889B /* input.txt in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -34,6 +39,9 @@
 		5F4E29A02B34CDB100C3889B /* Race.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
 		5F4E29A32B34CF6C00C3889B /* Attempt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attempt.swift; sourceTree = "<group>"; };
 		5F4E29A62B34D18400C3889B /* AttemptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttemptTests.swift; sourceTree = "<group>"; };
+		5F4E29A92B34E3A000C3889B /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		5F4E29AC2B34E3D400C3889B /* ParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
+		5F4E29AE2B34E82000C3889B /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +86,8 @@
 				5F4E298E2B34CD7F00C3889B /* main.swift */,
 				5F4E29A02B34CDB100C3889B /* Race.swift */,
 				5F4E29A32B34CF6C00C3889B /* Attempt.swift */,
+				5F4E29A92B34E3A000C3889B /* Parser.swift */,
+				5F4E29AE2B34E82000C3889B /* input.txt */,
 			);
 			path = "Day 6";
 			sourceTree = "<group>";
@@ -86,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				5F4E29A62B34D18400C3889B /* AttemptTests.swift */,
+				5F4E29AC2B34E3D400C3889B /* ParserTests.swift */,
 			);
 			path = "Day 6 Tests";
 			sourceTree = "<group>";
@@ -180,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F4E29AA2B34E3A000C3889B /* Parser.swift in Sources */,
 				5F4E29A42B34CF6C00C3889B /* Attempt.swift in Sources */,
 				5F4E29A12B34CDB100C3889B /* Race.swift in Sources */,
 				5F4E298F2B34CD7F00C3889B /* main.swift in Sources */,
@@ -190,7 +202,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F4E29AB2B34E3A000C3889B /* Parser.swift in Sources */,
 				5F4E29A22B34CDB100C3889B /* Race.swift in Sources */,
+				5F4E29AD2B34E3D400C3889B /* ParserTests.swift in Sources */,
 				5F4E29A52B34CF6C00C3889B /* Attempt.swift in Sources */,
 				5F4E29A82B34D18400C3889B /* AttemptTests.swift in Sources */,
 			);

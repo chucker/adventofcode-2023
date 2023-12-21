@@ -7,5 +7,12 @@
 
 import Foundation
 
-print("Hello, World!")
+let path = Bundle.main.path(forResource: "input", ofType: "txt")!
 
+let input = try! String(contentsOfFile: path, encoding: .utf8)
+
+let races = Parser.parse(input: input)
+
+let score = Race.getScore(races: races)
+
+print(score)

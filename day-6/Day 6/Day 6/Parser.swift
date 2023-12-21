@@ -9,13 +9,13 @@ import Foundation
 
 struct Parser {
     static func parse(input: String) -> [Race] {
-        let pattern = /(\d+)/
+        let pattern = /([\d\s]+)/
 
         var durations = [Int]()
         var distances = [Int]()
 
         for line in input.components(separatedBy: CharacterSet.newlines) {
-            let matches = line.matches(of: pattern).map { Int(String($0.output.0))! }
+            let matches = line.matches(of: pattern).map { Int(String($0.output.0.replacing(/\s/, with: "")))! }
 
             if line.starts(with: "Time") {
                 durations.append(contentsOf: matches)

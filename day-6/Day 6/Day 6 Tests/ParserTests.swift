@@ -16,12 +16,9 @@ Distance:  9  40  200
     func testExample() throws {
         let races = Parser.parse(input: input)
         
-        XCTAssertEqual(races.count, 3)
+        XCTAssertEqual(races.count, 1)
 
-        XCTAssertEqual(races[0].duration, Measurement(value: 7, unit: UnitDuration.milliseconds))
-        XCTAssertEqual(races[0].recordDistance, Measurement(value: 9, unit: UnitLength.millimeters))
-
-        XCTAssertEqual(races[1].duration, Measurement(value: 15, unit: UnitDuration.milliseconds))
-        XCTAssertEqual(races[1].recordDistance, Measurement(value: 40, unit: UnitLength.millimeters))
+        XCTAssertEqual(races[0].duration, Measurement(value: 71530, unit: UnitDuration.milliseconds))
+        XCTAssertEqual(races[0].recordDistance, Measurement(value: 940200, unit: UnitLength.millimeters))
     }
 }

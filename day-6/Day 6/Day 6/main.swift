@@ -11,8 +11,8 @@ let path = Bundle.main.path(forResource: "input", ofType: "txt")!
 
 let input = try! String(contentsOfFile: path, encoding: .utf8)
 
-let races = Parser.parse(input: input)
+let race = Parser.parse(input: input)[0]
 
-let score = Race.getScore(races: races)
+let score = race.getAllSuccessfulPossibilities().count
 
 print(score)

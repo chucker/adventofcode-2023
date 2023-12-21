@@ -17,6 +17,9 @@ final class AttemptTests: XCTestCase {
                  Race(duration: Measurement(value: 30.0, unit: UnitDuration.milliseconds),
                       recordDistance: Measurement(value: 200.0, unit: UnitLength.millimeters))]
 
+    let part2Race = Race(duration: Measurement(value: 71_530, unit: UnitDuration.milliseconds),
+                         recordDistance: Measurement(value: 940_200, unit: UnitLength.millimeters))
+
     let input = [(holdDuration: 0.0, expectedDistance: 0.0, expectedSuccess: false),
                  (holdDuration: 1.0, expectedDistance: 6.0, expectedSuccess: false),
                  (holdDuration: 2.0, expectedDistance: 10.0, expectedSuccess: true),
@@ -55,11 +58,19 @@ final class AttemptTests: XCTestCase {
             XCTAssertEqual(expectedCount, race.getAllSuccessfulPossibilities().count)
         }
     }
-    
+
+    func testCountSuccessfulPart2() throws {
+        let expectedCount = 71_503
+
+        let race = part2Race
+
+        XCTAssertEqual(expectedCount, race.getAllSuccessfulPossibilities().count)
+    }
+
     func testScore() throws {
         let expectedScore = 288
 
-        let actualScore = Race.getScore(races: races)
+        let actualScore = Race.getPart1Score(races: races)
 
         XCTAssertEqual(expectedScore, actualScore)
     }

@@ -25,7 +25,7 @@ struct Race {
         return attempts.filter { $0.isSuccessful() }
     }
     
-    static func getScore(races: [Race]) -> Int {
+    static func getPart1Score(races: [Race]) -> Int {
         var result = 1
         
         for race in races {

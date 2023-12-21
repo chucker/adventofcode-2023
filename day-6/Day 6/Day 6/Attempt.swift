@@ -21,4 +21,10 @@ struct Attempt {
         
         return Measurement(value: velocity * remainingTime.value, unit: UnitLength.millimeters)
     }
+    
+    func isSuccessful() -> Bool {
+        let distance = getTravelledDistance()
+        
+        return distance > race.recordDistance
+    }
 }

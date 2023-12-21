@@ -8,23 +8,34 @@
 import XCTest
 
 final class AttemptTests: XCTestCase {
-    func testGetTravelledDistance() throws {
-        let input = [(holdDuration: 0.0, raceDuration: 7.0, recordDistance: 9.0, expectedDistance: 0.0),
-                     (holdDuration: 1.0, raceDuration: 7.0, recordDistance: 9.0, expectedDistance: 6.0),
-                     (holdDuration: 2.0, raceDuration: 7.0, recordDistance: 9.0, expectedDistance: 10.0),
-                     (holdDuration: 3.0, raceDuration: 7.0, recordDistance: 9.0, expectedDistance: 12.0),
-                     (holdDuration: 4.0, raceDuration: 7.0, recordDistance: 9.0, expectedDistance: 12.0),
-                     (holdDuration: 5.0, raceDuration: 7.0, recordDistance: 9.0, expectedDistance: 10.0),
-                     (holdDuration: 6.0, raceDuration: 7.0, recordDistance: 9.0, expectedDistance: 6.0),
-                     (holdDuration: 7.0, raceDuration: 7.0, recordDistance: 9.0, expectedDistance: 0.0)]
+    let race1 = Race(duration: Measurement(value: 7.0, unit: UnitDuration.milliseconds),
+                    recordDistance: Measurement(value: 9.0, unit: UnitLength.millimeters))
 
+    let input = [(holdDuration: 0.0, expectedDistance: 0.0, expectedSuccess: false),
+                 (holdDuration: 1.0, expectedDistance: 6.0, expectedSuccess: false),
+                 (holdDuration: 2.0, expectedDistance: 10.0, expectedSuccess: true),
+                 (holdDuration: 3.0, expectedDistance: 12.0, expectedSuccess: true),
+                 (holdDuration: 4.0, expectedDistance: 12.0, expectedSuccess: true),
+                 (holdDuration: 5.0, expectedDistance: 10.0, expectedSuccess: true),
+                 (holdDuration: 6.0, expectedDistance: 6.0, expectedSuccess: false),
+                 (holdDuration: 7.0, expectedDistance: 0.0, expectedSuccess: false)]
+
+    func testGetTravelledDistance() throws {
         for tuple in input {
-            let race = Race(duration: Measurement(value: tuple.raceDuration, unit: UnitDuration.milliseconds),
-                            recordDistance: Measurement(value: tuple.recordDistance, unit: UnitLength.millimeters))
-            let attempt = Attempt(holdDuration: Measurement(value: tuple.holdDuration, unit: UnitDuration.milliseconds), race: race)
+            let attempt = Attempt(holdDuration: Measurement(value: tuple.holdDuration, unit: UnitDuration.milliseconds),
+                                  race: race1)
 
             XCTAssertEqual(Measurement(value: tuple.expectedDistance, unit: UnitLength.millimeters),
                            attempt.getTravelledDistance())
+        }
+    }
+
+    func testIsSuccessful() throws {
+        for tuple in input {
+            let attempt = Attempt(holdDuration: Measurement(value: tuple.holdDuration, unit: UnitDuration.milliseconds),
+                                  race: race1)
+
+            XCTAssertEqual(tuple.expectedSuccess, attempt.isSuccessful())
         }
     }
 }

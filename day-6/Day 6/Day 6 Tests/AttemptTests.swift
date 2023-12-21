@@ -11,7 +11,12 @@ final class AttemptTests: XCTestCase {
     func testGetTravelledDistance() throws {
         let input = [(holdDuration: 0.0, raceDuration: 7.0, recordDistance: 9.0, expectedDistance: 0.0),
                      (holdDuration: 1.0, raceDuration: 7.0, recordDistance: 9.0, expectedDistance: 6.0),
-                     (holdDuration: 2.0, raceDuration: 7.0, recordDistance: 9.0, expectedDistance: 10.0)]
+                     (holdDuration: 2.0, raceDuration: 7.0, recordDistance: 9.0, expectedDistance: 10.0),
+                     (holdDuration: 3.0, raceDuration: 7.0, recordDistance: 9.0, expectedDistance: 12.0),
+                     (holdDuration: 4.0, raceDuration: 7.0, recordDistance: 9.0, expectedDistance: 12.0),
+                     (holdDuration: 5.0, raceDuration: 7.0, recordDistance: 9.0, expectedDistance: 10.0),
+                     (holdDuration: 6.0, raceDuration: 7.0, recordDistance: 9.0, expectedDistance: 6.0),
+                     (holdDuration: 7.0, raceDuration: 7.0, recordDistance: 9.0, expectedDistance: 0.0)]
 
         for tuple in input {
             let race = Race(duration: Measurement(value: tuple.raceDuration, unit: UnitDuration.milliseconds),

@@ -12,6 +12,13 @@ struct Attempt {
     let race: Race
 
     func getTravelledDistance() -> Measurement<UnitLength> {
-        Measurement(value: 0, unit: UnitLength.millimeters)
+        let remainingTime = race.duration - holdDuration
+        
+        // there doesn't seem to be built-in support for a mm per ms velocity unit
+//        let velocity = Measurement(value: holdDuration.value, unit: UnitSpeed.
+        
+        let velocity = holdDuration.value
+        
+        return Measurement(value: velocity * remainingTime.value, unit: UnitLength.millimeters)
     }
 }
